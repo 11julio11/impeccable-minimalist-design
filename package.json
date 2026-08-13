@@ -28,7 +28,7 @@
   },
   "type": "module",
   "bin": {
-    "impeccable": "cli/bin/cli.js"
+    "design-minimalist": "cli/bin/cli.js"
   },
   "main": "./cli/engine/detect-antipatterns.mjs",
   "exports": {

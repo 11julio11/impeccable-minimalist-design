@@ -1,4 +1,4 @@
-Report and repair drift between this project's Impeccable artifacts and what the installed version reads: PRODUCT.md, DESIGN.md and its `.impeccable/design.json` sidecar, `.impeccable/config.json`, persisted surface briefs, and the design hook.
+Report and repair drift between this project's Minimalist Design artifacts and what the installed version reads: PRODUCT.md, DESIGN.md and its `.Minimalist Design/design.json` sidecar, `.Minimalist Design/config.json`, persisted surface briefs, and the design hook.
 
 This is maintenance, not design. Do not redesign anything, do not open files outside the ones the report names, and do not run any other command as a side effect.
 
@@ -6,8 +6,8 @@ This is maintenance, not design. Do not redesign anything, do not open files out
 
 Three kinds of drift travel under "out of date". Keep them apart:
 
-- **Tool version.** The installed skill is older than the published one. `context.mjs` reports that at boot as `UPDATE_AVAILABLE` and `npx impeccable update` fixes it. Not this command's job.
-- **Schema drift.** An artifact was written by an older Impeccable: fields nothing reads, fields now expected, files in retired locations. Mechanical, and this command repairs most of it.
+- **Tool version.** The installed skill is older than the published one. `context.mjs` reports that at boot as `UPDATE_AVAILABLE` and `npx Minimalist Design update` fixes it. Not this command's job.
+- **Schema drift.** An artifact was written by an older Minimalist Design: fields nothing reads, fields now expected, files in retired locations. Mechanical, and this command repairs most of it.
 - **Truth drift.** The code moved on and the document no longer describes it. No file comparison settles this. `document` owns DESIGN.md, `init` owns PRODUCT.md, and this command's job is to hand them a specific gap rather than a vague suspicion.
 
 ## Step 1: Run the pass
@@ -50,4 +50,4 @@ The same restraint applies to `workspace-context-inherited`. Inheritance is a de
 
 ## Opting out of the boot check
 
-`context.mjs` reports the cheap subset of these findings at session start, throttled to once a week per project. Set `"stalenessCheck": false` in `.impeccable/config.json` to silence that, or `IMPECCABLE_NO_STALENESS_CHECK=1` for one session. This command still works with the check disabled, and that is the combination to suggest for a user who wants the report only when they ask for it.
+`context.mjs` reports the cheap subset of these findings at session start, throttled to once a week per project. Set `"stalenessCheck": false` in `.Minimalist Design/config.json` to silence that, or `Minimalist Design_NO_STALENESS_CHECK=1` for one session. This command still works with the check disabled, and that is the combination to suggest for a user who wants the report only when they ask for it.

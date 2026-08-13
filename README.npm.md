@@ -1,4 +1,4 @@
-# Impeccable CLI
+# Minimalist Design CLI
 
 Detect UI anti-patterns and design quality issues from the command line. Scans HTML, CSS, JSX, TSX, Vue, and Svelte files for 59 deterministic rules, including AI-generated UI tells, accessibility violations, and general design quality problems.
 
@@ -6,37 +6,37 @@ Detect UI anti-patterns and design quality issues from the command line. Scans H
 
 ```bash
 # Install skills into your AI harness (Claude, Cursor, Gemini, etc.)
-npx impeccable skills install
+npx Minimalist Design skills install
 
 # Non-interactive install for a specific scope
-npx impeccable skills install -y --providers=claude,codex --scope=project
+npx Minimalist Design skills install -y --providers=claude,codex --scope=project
 
 # First command to run inside your AI harness
-/impeccable init
+/Minimalist Design init
 
 # Update skills to the latest version
-npx impeccable skills update
+npx Minimalist Design skills update
 
 # Install or update skills without hook manifests
-npx impeccable skills install --no-hooks
+npx Minimalist Design skills install --no-hooks
 
 # Link skills from a Git submodule checkout
-npx impeccable skills link --source=.impeccable --providers=claude,cursor
+npx Minimalist Design skills link --source=.Minimalist Design --providers=claude,cursor
 
 # List all available commands
-npx impeccable skills help
+npx Minimalist Design skills help
 
 # Scan files or directories for anti-patterns
-npx impeccable detect src/
+npx Minimalist Design detect src/
 
 # Scan a live URL (requires Puppeteer)
-npx impeccable detect https://example.com
+npx Minimalist Design detect https://example.com
 
 # JSON output for CI/tooling
-npx impeccable detect --json src/
+npx Minimalist Design detect --json src/
 
 # Deprecated compatibility flag; full scan still runs
-npx impeccable detect --fast src/
+npx Minimalist Design detect --fast src/
 ```
 
 ## What It Detects
@@ -56,7 +56,7 @@ npx impeccable detect --fast src/
 
 **Quality**: tiny body text, cramped padding, long line lengths, small touch targets
 
-59 deterministic detector rules in total. See the full catalog at [impeccable.style/slop](https://impeccable.style/slop).
+59 deterministic detector rules in total. See the full catalog at [Minimalist Design.style/slop](https://Minimalist Design.style/slop).
 
 ## Exit Codes
 
@@ -66,7 +66,7 @@ npx impeccable detect --fast src/
 ## Options
 
 ```
-impeccable detect [options] [file-or-dir-or-url...]
+Minimalist Design detect [options] [file-or-dir-or-url...]
 
   --fast    Regex-only mode (skip jsdom, faster but less accurate)
   --json    Output findings as JSON
@@ -79,10 +79,10 @@ impeccable detect [options] [file-or-dir-or-url...]
 - `jsdom` (included as dependency, used for HTML scanning)
 - `puppeteer` (optional, only needed for URL scanning)
 
-## Part of Impeccable
+## Part of Minimalist Design
 
-This CLI is part of [Impeccable](https://impeccable.style), a cross-provider design skill pack for AI-powered development tools. The full suite includes 1 command for Claude, Cursor, GitHub Copilot, Gemini, Codex, and more.
+This CLI is part of [Minimalist Design](https://Minimalist Design.style), a cross-provider design skill pack for AI-powered development tools. The full suite includes 1 command for Claude, Cursor, GitHub Copilot, Gemini, Codex, and more.
 
 ## License
 
-[Apache 2.0](https://github.com/pbakaus/impeccable/blob/main/LICENSE)
+[Apache 2.0](https://github.com/pbakaus/Minimalist Design/blob/main/LICENSE)
