@@ -62,6 +62,12 @@ Choose the mode from the requested surface, not the product, and persist it only
 | `adapt [target]` | Fix | Adapt for different devices and screen sizes | [reference/adapt.md](reference/adapt.md) · native: [reference/adapt.native.md](reference/adapt.native.md) |
 | `optimize [target]` | Fix | Diagnose and fix UI performance | [reference/optimize.md](reference/optimize.md) |
 | `live` | Iterate | Visual variant mode: pick elements in the browser, generate alternatives | [reference/live.md](reference/live.md) |
+| `frontend` | Knowledge | Frontend Design conventions and guidelines | [reference/design-frontend-design.md](reference/design-frontend-design.md) |
+| `brand` | Knowledge | Brand identity rules and Minimalist guidelines | [reference/design-brand-guidelines.md](reference/design-brand-guidelines.md) |
+| `theme` | Knowledge | Generation of Minimalist color palettes and themes | [reference/design-theme-factory.md](reference/design-theme-factory.md) |
+| `artifacts` | Knowledge | UI artifacts building blocks | [reference/design-web-artifacts-builder.md](reference/design-web-artifacts-builder.md) |
+| `canvas` | Knowledge | Best practices for canvas design | [reference/design-canvas-design.md](reference/design-canvas-design.md) |
+| `algorithmic-art` | Knowledge | Incorporating generative art into UI | [reference/design-algorithmic-art.md](reference/design-algorithmic-art.md) |
 
 Routing:
 
