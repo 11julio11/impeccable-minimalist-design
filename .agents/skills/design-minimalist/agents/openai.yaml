@@ -1,0 +1,4 @@
+interface:
+  display_name: Design Minimalist
+  short_description: Use when the user wants to design, redesign, shape, critique, audit, polish, clarify,...
+  default_prompt: Use Design Minimalist to redesign, critique, audit, or polish this frontend.
