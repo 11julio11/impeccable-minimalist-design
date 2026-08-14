@@ -1,4 +1,4 @@
-<!-- Este archivo fue adaptado para Minimalist Design -->
+<!-- This file was adapted for Minimalist Design -->
 
 Algorithmic philosophies are computational aesthetic movements that are then expressed through code. Output .md files (philosophy), .html files (interactive viewer), and .js files (generative algorithms).
 

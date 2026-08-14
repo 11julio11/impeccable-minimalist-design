@@ -1,4 +1,4 @@
-<!-- Este archivo fue adaptado para Minimalist Design -->
+<!-- This file was adapted for Minimalist Design -->
 
 These are instructions for creating design philosophies - aesthetic movements that are then EXPRESSED VISUALLY. Output only .md files, .pdf files, and .png files.
 

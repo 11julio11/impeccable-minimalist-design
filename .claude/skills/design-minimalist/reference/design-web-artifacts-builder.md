@@ -1,4 +1,4 @@
-<!-- Este archivo fue adaptado para Minimalist Design -->
+<!-- This file was adapted for Minimalist Design -->
 
 # Web Artifacts Builder
 
