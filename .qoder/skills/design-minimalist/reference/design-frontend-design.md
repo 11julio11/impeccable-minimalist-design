@@ -42,7 +42,7 @@ Spend your boldness in one place. Let the signature element be the one memorable
 
 Words appear in a design for one reason: to make it easier to understand, and therefore easier to use. They are design material, not decoration. Bring the same intentionality to copy that you would bring to spacing and color. Before writing anything, ask what the design needs to say, and how it can best be said to help the person navigate the experience.
 
-Write from the end user's side of the screen. Name things by what people control and recognize, never by how the system is built. A person manages notifications, not webhook config. Describe what something does in plain terms rather than selling it. Being specific is always better than being clever.
+Write from the end user's side of the screen. Name things by what people control and recognize, never by how the system is built. A person manages notifications, not webhook config. Describe what something does in plain term�s rather than selling it. Being specific is always better than being clever.
 
 Use active voice as default. A control should say exactly what happens when it's used: "Save changes," not "Submit." An action keeps the same name through the whole flow, so the button that says "Publish" produces a toast that says "Published." The vocabulary of an interface is the signposting for someone navigating the product. Cohesion and consistency are how people learn their way around.
 
@@ -122,3 +122,35 @@ Install technical barriers so that past mistakes do not slip back into your work
 - **Configure Linters and Formatters:** Implement tools in your code editor (like ESLint and Stylelint) that automatically block the use of bad practices before they are pushed to the server.
 - **Establish a Performance Budget:** Define a strict weight limit (e.g., "the page cannot weigh more than 1.5MB in total"). If a change exceeds that weight, the system prevents it from being published.
 - **Visual Regression Testing:** Implement tools that take automatic screenshots of the interface on different devices after each change, immediately alerting if anything is misaligned.
+
+
+## Plan Maestro de Resoluci�n de Problemas Frontend
+
+Este documento detalla los problemas m�s comunes en el dise�o y desarrollo de interfaces web, junto con una estrategia estructurada para diagnosticarlos, resolverlos y prevenirlos.
+
+### 1. Diagn�stico de los Problemas M�s Comunes
+**Adaptabilidad e Interfaz Visual:**
+- Falta de dise�o responsivo: Desbordamiento de elementos por uso de medidas fijas (px) en pantallas m�viles.
+- Inconsistencia entre navegadores: Variaciones visuales debido a diferentes motores de renderizado.
+- Manejo deficiente de CSS: C�digo sobreescrito, especificidad excesiva y hojas de estilo dif�ciles de mantener.
+
+**Rendimiento y Optimizaci�n:**
+- Tiempos de carga lentos: Im�genes pesadas sin compresi�n y bloqueo del renderizado por scripts masivos.
+- C�digo redundante: Inclusi�n de dependencias de gran tama�o para resolver tareas peque�as.
+
+**Experiencia de Usuario y L�gica:**
+- Gesti�n ca�tica del estado: P�rdida de sincronizaci�n de datos entre componentes de la interfaz.
+- Falta de accesibilidad (A11y): Ausencia de etiquetas descriptivas, mala navegaci�n por teclado y contraste deficiente.
+- Ignorar estados intermedios: No dise�ar interfaces para estados de carga (skeletons) o errores del sistema.
+
+### 2. Plan de Acci�n y Resoluci�n Tem�tica
+1. **Maquetaci�n y Flexibilidad:** Implementar metodolog�as de dise�o Mobile-First. Reemplazar unidades fijas por relativas (rem, em, %). Utilizar Flexbox y CSS Grid para estructuras din�micas.
+2. **Optimizaci�n del Rendimiento:** Aplicar compresi�n y formatos modernos a im�genes (WebP, AVIF). Configurar Lazy Loading. Minificar archivos CSS/JS y eliminar librer�as muertas.
+3. **Compatibilidad Inter-Navegador:** Utilizar herramientas como Autoprefixer. Configurar hojas de normalizaci�n (Normalize.css) y realizar pruebas en navegadores clave como Chrome, Safari y Firefox.
+4. **Arquitectura y L�gica:** Centralizar estados globales con herramientas como Redux Toolkit o Context API de forma moderada. Dise�ar y validar siempre los flujos de error y carga.
+5. **Accesibilidad Universal:** Garantizar el uso de HTML sem�ntico (<main>, <nav>, etc.). Incorporar atributos ARIA necesarios y verificar el contraste de color seg�n las pautas WCAG.
+
+### 3. Estrategia de Mantenimiento y Prevenci�n Autom�tica
+- **Linters y Formateadores:** Configurar ESLint y Prettier en el editor para unificar estilos de c�digo.
+- **Automatizaci�n CI/CD:** Ejecutar auditor�as autom�ticas con Lighthouse en cada despliegue para vigilar rendimiento y accesibilidad.
+- **Sistemas de Dise�o:** Documentar componentes reutilizables mediante Storybook para evitar la duplicaci�n de c�digo CSS err�neo.
