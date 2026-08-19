@@ -5,7 +5,7 @@
  * Copyright (c) 2026 Paul Bakaus
  * SPDX-License-Identifier: Apache-2.0
  *
- * Public API facade. Runtime engines live under cli/engine/engines/.
+ * Public API facade. Runtime engines live under core/detector/engines/.
  */
 
 import { detectCli } from './cli/main.mjs';

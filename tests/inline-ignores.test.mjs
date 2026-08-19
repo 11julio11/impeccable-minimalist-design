@@ -8,8 +8,8 @@ import {
   parseInlineIgnores,
   applyInlineIgnores,
   isInlineIgnored,
-} from '../cli/engine/shared/inline-ignores.mjs';
-import { detectText, detectHtml } from '../cli/engine/detect-antipatterns.mjs';
+} from '../core/detector/shared/inline-ignores.mjs';
+import { detectText, detectHtml } from '../core/detector/detect-antipatterns.mjs';
 
 const CLI = path.resolve('cli/bin/cli.js');
 

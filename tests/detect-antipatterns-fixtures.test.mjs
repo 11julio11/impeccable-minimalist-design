@@ -14,8 +14,8 @@ import {
   detectText,
   formatFindings,
   normalizeDesignSystem,
-} from '../cli/engine/detect-antipatterns.mjs';
-import { checkEmDashOveruse } from '../cli/engine/rules/checks.mjs';
+} from '../core/detector/detect-antipatterns.mjs';
+import { checkEmDashOveruse } from '../core/detector/rules/checks.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const FIXTURES = path.join(__dirname, 'fixtures', 'antipatterns');

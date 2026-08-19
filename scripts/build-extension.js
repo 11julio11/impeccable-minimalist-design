@@ -18,7 +18,7 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import { ANTIPATTERNS } from '../cli/engine/registry/antipatterns.mjs';
+import { ANTIPATTERNS } from '../core/detector/registry/antipatterns.mjs';
 import { bundleBrowserDetectorModules } from './lib/browser-detector-bundle.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -37,7 +37,7 @@ const output = `/**
  * Copyright (c) 2026 Paul Bakaus
  * SPDX-License-Identifier: Apache-2.0
  *
- * GENERATED -- do not edit. Source: cli/engine/browser/injected/index.mjs
+ * GENERATED -- do not edit. Source: core/detector/browser/injected/index.mjs
  * Rebuild: node scripts/build-extension.js
  */
 (function () {

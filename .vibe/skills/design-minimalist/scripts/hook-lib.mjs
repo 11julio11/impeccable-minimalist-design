@@ -40,7 +40,7 @@
  *   more than 8 to keep file size predictable across long-lived projects.
  * - The detector loader looks for `detector/detect-antipatterns.mjs` next to
  *   this file first (built skill layout) and falls back to the repo root's
- *   `cli/engine/detect-antipatterns.mjs` (running from source).
+ *   `core/detector/detect-antipatterns.mjs` (running from source).
  */
 
 import fs from 'node:fs';
@@ -140,7 +140,7 @@ export const IMMEDIATE_TIER_RULES = new Set([
 // This set is the hook's own copy of the registry's `advisory: true` rules,
 // mirroring how IMMEDIATE_TIER_RULES lists rule ids inline so the hook stays
 // self-contained and testable without loading the detector. Keep it in sync
-// with the registry (cli/engine/registry/antipatterns.mjs).
+// with the registry (core/detector/registry/antipatterns.mjs).
 export const ADVISORY_RULES = new Set([
   'em-dash-overuse',
 ]);

@@ -26,7 +26,7 @@ describe('ci-test-plan', () => {
   it('routes detector changes to detector tests only', () => {
     const outputs = runPlan({
       GITHUB_EVENT_NAME: 'pull_request',
-      CI_CHANGED_FILES: 'cli/engine/detect-antipatterns.mjs',
+      CI_CHANGED_FILES: 'core/detector/detect-antipatterns.mjs',
     });
 
     assert.equal(outputs.detector, 'true');

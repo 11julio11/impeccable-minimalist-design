@@ -1,5 +1,5 @@
 import { describe, test, expect, afterEach } from 'bun:test';
-import { launchBrowser } from '../cli/engine/engines/browser/detect-url.mjs';
+import { launchBrowser } from '../core/detector/engines/browser/detect-url.mjs';
 
 // launchBrowser prefers the system-installed Chrome on Windows to dodge the
 // bundled-Chrome GPU crash-loop (issue #372), and keeps the pinned bundled

@@ -19,10 +19,10 @@ import { fileURLToPath } from 'node:url';
 describe('Windows path doubling fix (#95)', () => {
   test('fileURLToPath strips leading slash from Windows file URLs', () => {
     // Simulates the exact scenario: file:///C:/Users/foo/detect-antipatterns.mjs
-    const winUrl = new URL('file:///C:/Users/foo/cli/engine/detect-antipatterns.mjs');
+    const winUrl = new URL('file:///C:/Users/foo/core/detector/detect-antipatterns.mjs');
 
-    // Raw .pathname returns '/C:/Users/foo/cli/engine/detect-antipatterns.mjs'
-    expect(winUrl.pathname).toBe('/C:/Users/foo/cli/engine/detect-antipatterns.mjs');
+    // Raw .pathname returns '/C:/Users/foo/core/detector/detect-antipatterns.mjs'
+    expect(winUrl.pathname).toBe('/C:/Users/foo/core/detector/detect-antipatterns.mjs');
 
     // fileURLToPath returns 'C:\\Users\\...' on Windows or '/C:/Users/...' on POSIX,
     // but crucially never returns '/C:/...' on Windows (which causes the double-drive bug)
@@ -39,9 +39,9 @@ describe('Windows path doubling fix (#95)', () => {
   });
 
   test('fileURLToPath handles POSIX file URLs correctly', () => {
-    const posixUrl = new URL('file:///home/user/cli/engine/detect-antipatterns.mjs');
+    const posixUrl = new URL('file:///home/user/core/detector/detect-antipatterns.mjs');
     const resolved = fileURLToPath(posixUrl);
-    expect(resolved).toBe('/home/user/cli/engine/detect-antipatterns.mjs');
+    expect(resolved).toBe('/home/user/core/detector/detect-antipatterns.mjs');
   });
 
   test('import.meta.url produces a valid file URL', () => {

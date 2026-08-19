@@ -19,8 +19,8 @@ import http from 'node:http';
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { createBrowserDetector, detectUrl, normalizeDesignSystem } from '../cli/engine/detect-antipatterns.mjs';
-import { launchBrowser } from '../cli/engine/engines/browser/detect-url.mjs';
+import { createBrowserDetector, detectUrl, normalizeDesignSystem } from '../core/detector/detect-antipatterns.mjs';
+import { launchBrowser } from '../core/detector/engines/browser/detect-url.mjs';
 import { filterDetectionFindings } from '../cli/lib/impeccable-config.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -40,14 +40,14 @@ let baseUrl;
 
 before(async () => {
   // Static server: maps /fixtures/* to tests/fixtures/* and
-  // /js/detect-antipatterns-browser.js to cli/engine/detect-antipatterns-browser.js
+  // /js/detect-antipatterns-browser.js to core/detector/detect-antipatterns-browser.js
   // (mirrors what Astro serves so fixtures can use absolute paths)
   server = http.createServer((req, res) => {
     let filePath;
     if (req.url.startsWith('/fixtures/')) {
       filePath = path.join(ROOT, 'tests', req.url);
     } else if (req.url === '/js/detect-antipatterns-browser.js') {
-      filePath = path.join(ROOT, 'cli/engine/detect-antipatterns-browser.js');
+      filePath = path.join(ROOT, 'core/detector/detect-antipatterns-browser.js');
     } else {
       res.writeHead(404).end();
       return;
@@ -156,7 +156,7 @@ describe('detectUrl — browser-only fixtures', () => {
       const page = await browser.newPage();
       await page.setViewport({ width: 1280, height: 800 });
       await page.goto(`${baseUrl}/fixtures/antipatterns/image-backed-contrast.html`, { waitUntil: 'load' });
-      await page.addScriptTag({ path: path.join(ROOT, 'cli/engine/detect-antipatterns-browser.js') });
+      await page.addScriptTag({ path: path.join(ROOT, 'core/detector/detect-antipatterns-browser.js') });
       const groups = await page.evaluate(() => window.impeccableDetectAsync());
       const contrast = groups.flatMap(g => (g.findings || []).filter(f => f.type === 'low-contrast').map(f => f.detail || f.snippet || ''));
       const snippets = contrast.join('\n');
@@ -355,7 +355,7 @@ describe('detectUrl — browser-only fixtures', () => {
       const page = await browser.newPage();
       await page.setViewport({ width: 1280, height: 800 });
       await page.goto(`${baseUrl}/fixtures/antipatterns/typography.html`, { waitUntil: 'load' });
-      const browserScript = fs.readFileSync(path.join(ROOT, 'cli/engine/detect-antipatterns-browser.js'), 'utf-8');
+      const browserScript = fs.readFileSync(path.join(ROOT, 'core/detector/detect-antipatterns-browser.js'), 'utf-8');
       await page.evaluate(() => { window.__IMPECCABLE_CONFIG__ = { autoScan: false }; });
       await page.evaluate(browserScript);
       const result = await page.evaluate(() => {
@@ -577,7 +577,7 @@ describe('detectUrl — browser-only fixtures', () => {
       const page = await browser.newPage();
       await page.setViewport({ width: 1280, height: 800 });
       await page.goto(`${baseUrl}/fixtures/antipatterns/visual-contrast.html`, { waitUntil: 'load' });
-      const browserScript = fs.readFileSync(path.join(ROOT, 'cli/engine/detect-antipatterns-browser.js'), 'utf-8');
+      const browserScript = fs.readFileSync(path.join(ROOT, 'core/detector/detect-antipatterns-browser.js'), 'utf-8');
       await page.evaluate(() => { window.__IMPECCABLE_CONFIG__ = { autoScan: false }; });
       await page.evaluate(browserScript);
       const result = await page.evaluate(async () => {
@@ -617,7 +617,7 @@ describe('detectUrl — browser-only fixtures', () => {
       // the offscreen cases are covered by the scrollOffscreen test above.
       await page.setViewport({ width: 1280, height: 1000 });
       await page.goto(`${baseUrl}/fixtures/antipatterns/visual-contrast.html`, { waitUntil: 'load' });
-      const browserScript = fs.readFileSync(path.join(ROOT, 'cli/engine/detect-antipatterns-browser.js'), 'utf-8');
+      const browserScript = fs.readFileSync(path.join(ROOT, 'core/detector/detect-antipatterns-browser.js'), 'utf-8');
       await page.evaluate(() => { window.__IMPECCABLE_CONFIG__ = { autoScan: false }; });
       await page.evaluate(browserScript);
       const result = await page.evaluate(async () => {
@@ -796,7 +796,7 @@ describe('detectUrl — browser-only fixtures', () => {
       const page = await browser.newPage();
       await page.setViewport({ width: 1280, height: 800 });
       await page.goto(`${baseUrl}/fixtures/antipatterns/visual-contrast.html`, { waitUntil: 'load' });
-      const browserScript = fs.readFileSync(path.join(ROOT, 'cli/engine/detect-antipatterns-browser.js'), 'utf-8');
+      const browserScript = fs.readFileSync(path.join(ROOT, 'core/detector/detect-antipatterns-browser.js'), 'utf-8');
       await page.evaluate(() => {
         document.documentElement.dataset.impeccableExtension = 'true';
         window.__impeccableMessages = [];
@@ -859,7 +859,7 @@ describe('detectUrl — browser-only fixtures', () => {
       const page = await browser.newPage();
       await page.setViewport({ width: 1280, height: 800 });
       await page.goto(`${baseUrl}/fixtures/antipatterns/visual-contrast.html`, { waitUntil: 'load' });
-      const browserScript = fs.readFileSync(path.join(ROOT, 'cli/engine/detect-antipatterns-browser.js'), 'utf-8');
+      const browserScript = fs.readFileSync(path.join(ROOT, 'core/detector/detect-antipatterns-browser.js'), 'utf-8');
       await page.evaluate(() => {
         document.documentElement.dataset.impeccableExtension = 'true';
         window.__impeccableMessages = [];
@@ -923,7 +923,7 @@ describe('detectUrl — browser-only fixtures', () => {
       const page = await browser.newPage();
       await page.setViewport({ width: 1280, height: 800 });
       await page.goto(`${baseUrl}/fixtures/antipatterns/should-pass.html`, { waitUntil: 'load' });
-      const browserScript = fs.readFileSync(path.join(ROOT, 'cli/engine/detect-antipatterns-browser.js'), 'utf-8');
+      const browserScript = fs.readFileSync(path.join(ROOT, 'core/detector/detect-antipatterns-browser.js'), 'utf-8');
       await page.evaluate(() => {
         document.documentElement.dataset.impeccableExtension = 'true';
         window.__impeccableMessages = [];
@@ -978,7 +978,7 @@ describe('detectUrl — browser-only fixtures', () => {
       const page = await browser.newPage();
       await page.setViewport({ width: 1280, height: 800 });
       await page.goto(`${baseUrl}/fixtures/antipatterns/quality.html`, { waitUntil: 'load' });
-      const browserScript = fs.readFileSync(path.join(ROOT, 'cli/engine/detect-antipatterns-browser.js'), 'utf-8');
+      const browserScript = fs.readFileSync(path.join(ROOT, 'core/detector/detect-antipatterns-browser.js'), 'utf-8');
       await page.evaluate(() => { window.__IMPECCABLE_CONFIG__ = { autoScan: false }; });
       await page.evaluate(browserScript);
       const pure = await page.evaluate(() => {
@@ -1014,7 +1014,7 @@ describe('detectUrl — browser-only fixtures', () => {
       const page = await browser.newPage();
       await page.setViewport({ width: 1280, height: 800 });
       await page.goto(`${baseUrl}/fixtures/antipatterns/quality.html`, { waitUntil: 'load' });
-      const browserScript = fs.readFileSync(path.join(ROOT, 'cli/engine/detect-antipatterns-browser.js'), 'utf-8');
+      const browserScript = fs.readFileSync(path.join(ROOT, 'core/detector/detect-antipatterns-browser.js'), 'utf-8');
       await page.evaluate(() => { window.__IMPECCABLE_CONFIG__ = { autoScan: false }; });
       await page.evaluate(browserScript);
       const result = await page.evaluate(async () => {

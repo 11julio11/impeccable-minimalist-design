@@ -1,0 +1,3 @@
+# interaction-context
+
+Descripción pendiente...

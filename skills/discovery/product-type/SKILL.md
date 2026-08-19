@@ -1,0 +1,3 @@
+# product-type
+
+Descripción pendiente...

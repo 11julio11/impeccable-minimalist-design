@@ -64,7 +64,7 @@ import {
   isScanTargetInsideProject,
 } from '../skill/scripts/hook-lib.mjs';
 import { normalizeIgnoreValueEntries as normalizeIgnoreValueEntriesCli } from '../cli/lib/impeccable-config.mjs';
-import { detectHtml, detectText } from '../cli/engine/detect-antipatterns.mjs';
+import { detectHtml, detectText } from '../core/detector/detect-antipatterns.mjs';
 
 function mkTmp() {
   return fs.mkdtempSync(path.join(os.tmpdir(), 'impeccable-hook-'));

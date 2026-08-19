@@ -18,7 +18,7 @@ import {
   isAllowedFontSizeRaw,
   loadDesignSystemForCwd,
   normalizeDesignSystem,
-} from '../cli/engine/design-system.mjs';
+} from '../core/detector/design-system.mjs';
 
 const tempDirs = [];
 

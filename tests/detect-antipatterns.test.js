@@ -9,8 +9,8 @@ import {
   walkDir, hasScannableExtension, SCANNABLE_EXTENSIONS,
   buildImportGraph, resolveImport,
   detectFrameworkConfig, isPortListening, FRAMEWORK_CONFIGS,
-} from '../cli/engine/detect-antipatterns.mjs';
-import { filterByScopes } from '../cli/engine/registry/antipatterns.mjs';
+} from '../core/detector/detect-antipatterns.mjs';
+import { filterByScopes } from '../core/detector/registry/antipatterns.mjs';
 import {
   checkColors,
   checkElementTextOverflowDOM,
@@ -29,8 +29,8 @@ import {
   scanCssTextForPulsingDot,
   scanCssTextForRadialHalo,
   scanHtmlForShapeAssembledIllustration,
-} from '../cli/engine/rules/checks.mjs';
-import { parseGradientColors } from '../cli/engine/shared/color.mjs';
+} from '../core/detector/rules/checks.mjs';
+import { parseGradientColors } from '../core/detector/shared/color.mjs';
 
 const FIXTURES = path.join(import.meta.dir, 'fixtures', 'antipatterns');
 const SCRIPT = path.join(import.meta.dir, '..', 'cli', 'engine', 'detect-antipatterns.mjs');

@@ -61,7 +61,7 @@ Compatibility:
 
   if (command === 'detect') {
     process.argv = [process.argv[0], process.argv[1], ...args.slice(1)];
-    const { detectCli } = await import('../engine/detect-antipatterns.mjs');
+    const { detectCli } = await import('../../core/detector/detect-antipatterns.mjs');
     await detectCli();
   } else if (command === 'ignores' || command === 'ignore') {
     const { run } = await import('./commands/ignores.mjs');
@@ -75,7 +75,7 @@ Compatibility:
   } else if (looksLikeDetectTarget(command)) {
     // Default: treat as detect arguments (allow `npx impeccable src/` shorthand)
     process.argv = [process.argv[0], process.argv[1], ...args];
-    const { detectCli } = await import('../engine/detect-antipatterns.mjs');
+    const { detectCli } = await import('../../core/detector/detect-antipatterns.mjs');
     await detectCli();
   } else if (command === 'init') {
     // The follow-up mistake from issue #472: `/impeccable init` belongs in an AI

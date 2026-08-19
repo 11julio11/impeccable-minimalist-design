@@ -1,0 +1,3 @@
+# reduced-motion
+
+Descripción pendiente...

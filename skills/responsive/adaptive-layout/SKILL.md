@@ -1,0 +1,3 @@
+# adaptive-layout
+
+Descripción pendiente...

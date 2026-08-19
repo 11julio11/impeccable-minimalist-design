@@ -13,7 +13,7 @@ import {
   detectUrl,
   summarizeDetectorProfile,
   walkDir,
-} from '../cli/engine/detect-antipatterns.mjs';
+} from '../core/detector/detect-antipatterns.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, '..');

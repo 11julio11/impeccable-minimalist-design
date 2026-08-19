@@ -25,7 +25,7 @@ import { createAllZips, createProviderZip } from './lib/zip.js';
 import { collectPluginVersions } from './lib/validate-plugin-versions.js';
 import { collectPluginManifestFindings } from './lib/validate-plugin-manifest.js';
 import { stageOpenAIPlugin } from './lib/openai-plugin.js';
-import { ANTIPATTERNS } from '../cli/engine/registry/antipatterns.mjs';
+import { ANTIPATTERNS } from '../core/detector/registry/antipatterns.mjs';
 // Sub-page generation is now handled by Astro content collections.
 
 /**

@@ -9,12 +9,12 @@ import path from 'path';
 //   New installs write project config at .impeccable/live/config.json instead.
 export const PER_PROJECT_SCRIPT_ARTIFACTS = new Set(['config.json']);
 
-const DETECTOR_BUNDLE_DIR = 'cli/engine';
+const DETECTOR_BUNDLE_DIR = 'core/detector';
 
-// Detector source files that live OUTSIDE `cli/engine` but are imported by the
-// bundled engine. `cli/engine/cli/main.mjs` imports `../../lib/impeccable-config.mjs`,
+// Detector source files that live OUTSIDE `core/detector` but are imported by the
+// bundled engine. `core/detector/cli/main.mjs` imports `../../lib/impeccable-config.mjs`,
 // which in the source CLI resolves to `cli/lib/impeccable-config.mjs`. The detector
-// bundle copies `cli/engine/**` to `scripts/detector/**`, so from the bundled
+// bundle copies `core/detector/**` to `scripts/detector/**`, so from the bundled
 // `scripts/detector/cli/main.mjs` that same `../../lib/...` import resolves to
 // `scripts/lib/impeccable-config.mjs`. Copy the dependency there or the bundled
 // detector fails at import time with "Cannot find module .../lib/impeccable-config.mjs".

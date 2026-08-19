@@ -12,6 +12,25 @@ Core principles:
 - Dream clean. Distinct, beautifully spaced, highly legible and functional work. Minimalist doesn't mean boring; it means essential.
 - Verify in bounded passes, not a loop, and the ceiling covers the whole cycle: screenshots, defect scans, micro-edits, and rebuilds alike. Build fully, inspect once with a batched round (desktop and mobile together on the web; the shipped device classes on a native platform), fix everything it shows in one batch, confirm with at most one more round, and stop polishing. Open-ended self-QA burns the user's money doing worse what the finish handoffs do better.
 
+## Execution Protocol (3-Phase Workflow)
+
+You MUST strictly follow this 3-phase filter for EVERY task:
+
+1. **Phase 1: Analysis**
+   - Read the codebase, investigate dependencies, and understand the context of the user's request.
+   - Do NOT write production code or execute modifying commands during this phase.
+   - Present a clear summary of your findings to the user.
+
+2. **Phase 2: Detailed Plan**
+   - Generate a detailed, structured plan (e.g., an `implementation_plan.md` and a task list) detailing exactly which files will be modified and what visual/logic changes will be applied based on Phase 1.
+   - **MANDATORY HALT:** You MUST stop execution here and explicitly ask for the user's approval (e.g., "I await your 'OK' to proceed with execution").
+   - Do NOT advance to Phase 3 without explicit user approval.
+
+3. **Phase 3: Execution**
+   - Only after the user approves the plan, implement the code changes.
+   - Follow the agreed-upon plan strictly.
+   - Upon completion, present the results for validation.
+
 ## Setup
 
 1. Run `node <skill-base-dir>/scripts/context.mjs` once per session, where `<skill-base-dir>` is the loaded base directory the runtime reports for this skill; keep cwd at the user's project. That base directory resolves every `node .gemini/skills/design-minimalist/scripts/...` command in this skill and its references, and `.gemini/skills/design-minimalist/scripts` is the fallback only when the runtime reports no base directory. Pass a named source file or route as `--target <path>`. It loads PRODUCT.md, DESIGN.md, the matching surface brief, and native-platform guidance when applicable; follow its directives and do not rerun it.

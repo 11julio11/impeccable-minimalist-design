@@ -3,7 +3,7 @@
  * Copyright (c) 2026 Paul Bakaus
  * SPDX-License-Identifier: Apache-2.0
  *
- * GENERATED -- do not edit. Source: cli/engine/browser/injected/index.mjs
+ * GENERATED -- do not edit. Source: core/detector/browser/injected/index.mjs
  * Rebuild: node scripts/build-browser-detector.js
  *
  * Usage: <script src="detect-antipatterns-browser.js"></script>
@@ -11,7 +11,7 @@
  */
 (function () {
 if (typeof window === 'undefined') return;
-// --- cli/engine/shared/constants.mjs ---
+// --- core/detector/shared/constants.mjs ---
 // ─── Section 1: Constants ───────────────────────────────────────────────────
 
 const SAFE_TAGS = new Set([
@@ -108,7 +108,7 @@ const KNOWN_SERIF_FONTS = new Set([
   'freight display', 'freight text',
 ]);
 
-// --- cli/engine/registry/antipatterns.mjs ---
+// --- core/detector/registry/antipatterns.mjs ---
 const ANTIPATTERNS = [
   // ── AI slop: tells that something was AI-generated ──
   {
@@ -667,7 +667,7 @@ const ANTIPATTERNS = [
   },
 ];
 
-// --- cli/engine/shared/color.mjs ---
+// --- core/detector/shared/color.mjs ---
 // ─── Section 2: Color Utilities ─────────────────────────────────────────────
 
 function isNeutralColor(color) {
@@ -1232,7 +1232,7 @@ function isNoPaintColorValue(value) {
   return v === 'transparent' || v === 'none' || v === 'initial' || v === 'inherit' || v === 'unset' || v === 'revert' || v === 'revert-layer';
 }
 
-// --- cli/engine/shared/fonts.mjs ---
+// --- core/detector/shared/fonts.mjs ---
 const GOOGLE_FONTS_URL_RE = /fonts\.googleapis\.com\/css2?\?[^"'\s)<>]*/gi;
 
 function normalizeGoogleFontFamilyParam(value) {
@@ -1262,7 +1262,7 @@ function extractGoogleFontFamilies(text) {
   return families;
 }
 
-// --- cli/engine/rules/checks.mjs ---
+// --- core/detector/rules/checks.mjs ---
 const DETECTOR_IS_BROWSER = typeof window !== 'undefined';
 
 // ─── Section 3: Pure Detection ──────────────────────────────────────────────
@@ -6652,7 +6652,7 @@ function checkFirstViewportColumnOverflowDOM() {
   return findings;
 }
 
-// --- cli/engine/browser/injected/index.mjs ---
+// --- core/detector/browser/injected/index.mjs ---
 const IS_BROWSER = typeof window !== 'undefined';
 
 // ─── Section 7: Browser UI (IS_BROWSER only) ────────────────────────────────

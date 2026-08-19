@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 /**
- * Generates cli/engine/detect-antipatterns-browser.js
+ * Generates core/detector/detect-antipatterns-browser.js
  * by concatenating the browser-safe detector modules and wrapping them in an IIFE.
  *
  * Run: node scripts/build-browser-detector.js
@@ -15,7 +15,7 @@ import { bundleBrowserDetectorModules } from './lib/browser-detector-bundle.js';
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, '..');
 
-const OUTPUT = path.join(ROOT, 'cli/engine/detect-antipatterns-browser.js');
+const OUTPUT = path.join(ROOT, 'core/detector/detect-antipatterns-browser.js');
 const SITE_OUTPUT = path.join(ROOT, 'site/public/js/detect-antipatterns-browser.js');
 
 const code = bundleBrowserDetectorModules(ROOT);
@@ -25,7 +25,7 @@ const output = `/**
  * Copyright (c) 2026 Paul Bakaus
  * SPDX-License-Identifier: Apache-2.0
  *
- * GENERATED -- do not edit. Source: cli/engine/browser/injected/index.mjs
+ * GENERATED -- do not edit. Source: core/detector/browser/injected/index.mjs
  * Rebuild: node scripts/build-browser-detector.js
  *
  * Usage: <script src="detect-antipatterns-browser.js"></script>
