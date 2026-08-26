@@ -40,7 +40,7 @@ def as_clock(total) -> str:
 
 
 def run_query(query: str, limit: int, flat: bool) -> tuple[list[dict], str]:
-    command = ["yt-dlp", f"ytsearch{limit}:{query}", "--no-warnings",
+    command = ["python", "-m", "yt_dlp", f"ytsearch{limit}:{query}", "--no-warnings",
                "--print", SEPARATOR.join(f"%({field})s" for field in FIELDS)]
     if flat:
         command.append("--flat-playlist")
@@ -78,7 +78,7 @@ def main() -> int:
                         help="slower per-video extraction: real upload dates and untranslated titles")
     args = parser.parse_args()
 
-    if not shutil.which("yt-dlp"):
+    if not shutil.which("python"):
         receipt(status="error", error_type="MissingDependency",
                 hint="macOS: brew install yt-dlp")
         return 5
