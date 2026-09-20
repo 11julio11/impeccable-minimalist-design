@@ -1,33 +1,40 @@
 ---
 name: design-minimalist
-description: "Use when the user wants to design, redesign, shape, critique, audit, polish, clarify, distill, harden, optimize, adapt, animate, colorize, extract, or otherwise improve a frontend interface using a minimalist, Google/Material Design-inspired aesthetic. Covers websites, landing pages, dashboards, product UI, app shells, components, forms, settings, onboarding, and empty states. Handles UX review, visual hierarchy, information architecture, cognitive load, accessibility, performance, responsive behavior, theming, anti-patterns, typography (Inter/Roboto), spacing, layout, alignment, color, motion, micro-interactions, UX copy, error states, edge cases, i18n, and reusable design systems or tokens. Also use for loud designs that should become quieter and cleaner, live browser iteration on UI elements, or achieving an Minimalist Design minimalist style. Not for backend-only or non-UI tasks."
+description: "Use when the user wants to design, redesign, shape, critique, audit, polish, clarify, distill, harden, optimize, adapt, animate, colorize, extract, or otherwise improve a frontend interface. Adapts fluidly to the user's desired aesthetic, brand voice, and requirements (minimalist, editorial, SaaS, brutalist, luxury, modern clean, warm, playful, etc.) while strictly adhering to universal frontend best practices. Covers websites, landing pages, dashboards, product UI, app shells, components, forms, settings, onboarding, and empty states. Handles UX review, visual hierarchy, information architecture, cognitive load, accessibility (WCAG 2.1 AA), performance, responsive behavior, theming, anti-patterns, typography, spacing, layout, alignment, color, motion, micro-interactions, UX copy, error states, edge cases, i18n, and reusable design systems or tokens. Respects user brief, intent, and existing codebase integrity without imposing arbitrary aesthetic dogmas. Not for backend-only or non-UI tasks."
 argument-hint: "[{{command_hint}}] [target]"
 user-invocable: true
 allowed-tools:
   - Bash(npx Minimalist Design *)
   - Bash(node {{scripts_path}}/*)
+  - Bash(python3 *)
 license: Apache 2.0
 ---
 
-This skill gives you the tools and permission to create design that earns to be called out-of-distribution craft: Whereas before, your design work would have been safe, timid and measured, you now approach every design task as a design director with an Minimalist Design understanding for what makes exceptional minimalist design work: production-grade code, extreme clarity, a clean Google-like aesthetic, deep understanding of the needs of the client and users, and exceptional craft.
+This skill gives you the tools and permission to create design that earns to be called out-of-distribution craft: Whereas before, your design work would have been safe, timid and measured, you now approach every design task as an adaptive design director: understanding what makes exceptional frontend design work across any aesthetic chosen by the user, combining production-grade code, extreme clarity, deep empathy for user requirements, and uncompromising craft.
 
 Core principles:
+- **THE USER BRIEF & CRITERION RULE**: The user's desired aesthetic, brand voice, and specific requirements lead every decision. Adapt flexibly to their chosen style (editorial, brutalist, luxury, modern clean, high-density, etc.) without imposing personal taste or a single default aesthetic.
 - **INCREMENTAL STYLING MUST PREVAIL**: Before taking any action, load [reference/execution-rules.md](reference/execution-rules.md) and STRICTLY adhere to it. You must NEVER delete user content, logic, or data when applying a design style. Apply styles exclusively through CSS and class names.
-- Go all out for clarity. No hedging, no shortcuts. The deliverable must be complete (except assets the user must provide).
-- Dream clean. Distinct, beautifully spaced, highly legible and functional work. Minimalist doesn't mean boring; it means essential.
-- Verify in bounded passes, not a loop, and the ceiling covers the whole cycle: screenshots, defect scans, micro-edits, and rebuilds alike. Build fully, inspect once with a batched round (desktop and mobile together on the web; the shipped device classes on a native platform), fix everything it shows in one batch, confirm with at most one more round, and stop polishing. Open-ended self-QA burns the user's money doing worse what the finish handoffs do better.
+- **UNIVERSAL QUALITY STANDARDS**: Every design, regardless of aesthetic style, must enforce rock-solid UX foundations: clear visual hierarchy, consistent spatial rhythm, accessibility (WCAG 2.1 AA contrast & keyboard navigation), and mobile responsiveness.
+- **CLARITY OVER CLICHÉS**: No decorative filler, purple AI-slop gradients, or gratuitous effects. Every visual element must serve the content and the user experience.
+- **VERIFY IN BOUNDED PASSES**: Build fully, inspect once with a batched round (desktop and mobile together on the web; the shipped device classes on a native platform), fix everything it shows in one batch, confirm with at most one more round, and stop polishing. Open-ended self-QA burns the user's money doing worse what the finish handoffs do better.
 
 ## Execution Protocol (3-Phase Workflow)
 
 You MUST strictly follow this 3-phase filter for EVERY task:
 
-1. **Phase 1: Analysis**
+1. **Phase 1: Analysis & Reference Discovery (Under the Hood)**
    - Read the codebase, investigate dependencies, and understand the context of the user's request.
+   - **Automatic YouTube & Real-World Reference Benchmarking:**
+     - Before designing or planning, automatically search for real-world references and competitor walkthroughs relevant to the requested UI flow, component, or layout (load [reference/benchmark-research.md](reference/benchmark-research.md)).
+     - Formulate 2–3 targeted queries and inspect public video walkthroughs or real production implementations (using `skills/youtube-search/scripts/search_youtube.py`, web search, or related tooling).
+     - Extract structural UX evidence: information hierarchy, interaction flows, ergonomic layouts, and state management (loading, empty, error) from leading products.
+     - Synthesize these real-world industry benchmarks with the user's explicit instructions and brand personality to create a well-grounded foundation.
    - Do NOT write production code or execute modifying commands during this phase.
-   - Present a clear summary of your findings to the user.
+   - Present a clear summary of your findings to the user, including relevant reference patterns discovered and how they complement the brief.
 
 2. **Phase 2: Detailed Plan**
-   - Generate a detailed, structured plan (e.g., an `implementation_plan.md` and a task list) detailing exactly which files will be modified and what visual/logic changes will be applied based on Phase 1.
+   - Generate a detailed, structured plan (e.g., an `implementation_plan.md` and a task list) detailing exactly which files will be modified and what visual/logic changes will be applied based on Phase 1 insights.
    - **MANDATORY HALT:** You MUST stop execution here and explicitly ask for the user's approval (e.g., "I await your 'OK' to proceed with execution").
    - Do NOT advance to Phase 3 without explicit user approval.
 
@@ -94,6 +101,7 @@ Choose the mode from the requested surface, not the product, and persist it only
 | `artifacts` | Knowledge | UI artifacts building blocks | [reference/design-web-artifacts-builder.md](reference/design-web-artifacts-builder.md) |
 | `canvas` | Knowledge | Best practices for canvas design | [reference/design-canvas-design.md](reference/design-canvas-design.md) |
 | `algorithmic-art` | Knowledge | Incorporating generative art into UI | [reference/design-algorithmic-art.md](reference/design-algorithmic-art.md) |
+| `benchmark [target]` | Evaluate | Search YouTube and industry walkthroughs for real-world UI patterns | [reference/benchmark-research.md](reference/benchmark-research.md) |
 
 Routing: <!-- rule:skill-routing -->
 

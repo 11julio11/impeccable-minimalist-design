@@ -6,12 +6,12 @@ Load this after the direction is settled, and build without announcing the check
 
 Each of these is a check on the built result, not an intention. Run them together in the batched inspection rounds, not as separate screenshot trips; the checks share one render.
 
-- **Contrast:** body and placeholder text ≥4.5:1, large text ≥3:1. On colored surfaces tint secondary text from that hue or the foreground; never use pure black (`#000000`). Prefer dark grays like `#202124` for text. <!-- rule:skill-color-verify-contrast -->
-- **Depth:** shadows carry a vertical offset and a soft blur (Material elevation). A zero-offset colored halo is forbidden. Avoid harsh or unblurred borders. <!-- rule:skill-color-no-glow-halo -->
+- **Contrast:** body and placeholder text ≥4.5:1, large text ≥3:1. On colored surfaces tint secondary text from that hue or the foreground; never use pure black (`#000000`) on harsh white. Prefer high-contrast, comfortable tones. <!-- rule:skill-color-verify-contrast -->
+- **Depth:** shadows carry a clean offset and an intentional blur tuned to the surface world. A zero-offset colored halo is forbidden. Avoid muddy or unconsidered borders. <!-- rule:skill-color-no-glow-halo -->
 - **Spacing:** tight groups, generous separation, more space above a heading than below it. Use an 8px base grid (`8px`, `16px`, `24px`, `48px`). <!-- rule:skill-layout-spacing-rhythm -->
-- **Type:** body measure 65–75ch, display max 6rem, tracking floor -0.04em. Use sans-serif fonts exclusively (Inter, Roboto, Open Sans). Run the real copy at every breakpoint and fix what overflows. <!-- rule:skill-typo-floor --> <!-- rule:skill-ban-text-overflow -->
-- **Motion:** one authored moment, not scattered effects and not one identical entrance on every section. Use short, subtle transitions (max `0.2s` ease-in-out) typical of Google apps. <!-- rule:skill-motion-floor --> <!-- rule:skill-motion-materials-palette --> <!-- rule:skill-motion-no-section-fade -->
-- **States:** hover, disabled, loading, error, empty. Plus real content, working controls, responsive composition, keyboard focus. Hover states should subtly increase elevation or darken backgrounds. <!-- rule:skill-floor-shipping -->
+- **Type:** body measure 65–75ch, display max 6rem, tracking floor -0.04em. Choose typography that embodies the project's voice (e.g. geometric or grotesque sans, editorial serif, or high-density mono) rather than default fallbacks. Run the real copy at every breakpoint and fix what overflows. <!-- rule:skill-typo-floor --> <!-- rule:skill-ban-text-overflow -->
+- **Motion:** one authored moment, not scattered effects and not one identical entrance on every section. Use short, purposeful transitions (typically 150–250ms with natural easing) appropriate for the interface. <!-- rule:skill-motion-floor --> <!-- rule:skill-motion-materials-palette --> <!-- rule:skill-motion-no-section-fade -->
+- **States:** hover, disabled, loading, error, empty. Plus real content, working controls, responsive composition, keyboard focus. Hover states should clearly provide tactile feedback (elevation, brightness, or color shift). <!-- rule:skill-floor-shipping -->
 - **Browser surfaces:** the parts you did not draw still carry the design. Text selection, the caret, custom scrollbars, focus rings, underline offset, and the numerals in tabular data all ship with browser defaults that belong to no design system. Theme them from the palette. This is the cheapest signal that a page was built rather than assembled, and the one models skip most reliably. <!-- rule:skill-craft-browser-surfaces -->
 - **Copy:** the product's own language. Controls name their action; errors name the problem and the recovery. <!-- rule:skill-copy-design-material -->
 - **Coverage:** every brief requirement present and findable within seconds. <!-- rule:skill-floor-brief-coverage -->
@@ -30,10 +30,10 @@ Page scaffolds:
 
 Surface habits:
 
-- Gradient text. Emphasis comes from weight or size, or primary Google Blue (`#1a73e8`). <!-- rule:skill-ban-gradient-text -->
-- Glass and blur as decoration. Glassmorphism is strictly forbidden in this minimalist skill. Use solid surfaces instead. <!-- rule:skill-ban-glassmorphism-default -->
+- Gradient text as an unthinking default. Emphasis comes from weight, size, or an intentional accent color from the palette. <!-- rule:skill-ban-gradient-text -->
+- Glass and blur as lazy decoration. Glassmorphism must only be used if explicitly required by the visual direction (e.g. translucent overlays or OS-style HUDs), never as an excuse to ignore contrast or readability. <!-- rule:skill-ban-glassmorphism-default -->
 - A colored `border-left` or `border-right` above 1px on cards, list items, callouts, or alerts. <!-- rule:skill-ban-side-stripe-borders -->
-- Hard offset shadows (`box-shadow: 4px 4px 0`) or neobrutalism. Only use soft, blurred drop shadows (Material Elevation). <!-- rule:skill-ban-hard-offset-shadow -->
+- Arbitrary or unmotivated offset shadows. If neobrutalism or retro styling is requested by the brief, use deliberate, well-aligned offset shadows consistently; otherwise, use soft, balanced drop shadows. <!-- rule:skill-ban-hard-offset-shadow -->
 - Sparklines, progress rings, and soft-shadowed rounded rectangles standing in for content. <!-- rule:skill-reflex-decorative-chrome -->
 - Monospace as a costume for "technical" rather than for code, data, or measurement. <!-- rule:skill-reflex-mono-as-technical -->
 - A system display face (Impact, Arial Black, the platform sans) as the display voice of an own-world page. Source and self-host a face whose character matches the approved lettering; the closest installed font is a failure, not a fallback. <!-- rule:skill-ban-system-display-face -->

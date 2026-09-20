@@ -95,8 +95,8 @@ Search the codebase in priority order:
 
 Build a structured draft from the discovered tokens. For each token class:
 
-- **Colors**: Group into Primary / Secondary / Tertiary / Neutral (the Material-derived roles Stitch uses). If the project only has one accent, express it as Primary + Neutral; omit Secondary and Tertiary rather than inventing them.
-- **Typography**: Map observed sizes and weights to the Material hierarchy (display / headline / title / body / label). Note font-family stacks and the scale ratio.
+- **Colors**: Group into Primary / Secondary / Tertiary / Neutral (standard semantic color roles). If the project only has one accent, express it as Primary + Neutral; omit Secondary and Tertiary rather than inventing them.
+- **Typography**: Map observed sizes and weights to semantic scale roles (display / headline / title / body / label). Note font-family stacks and the scale ratio.
 - **Elevation**: Catalogue the shadow vocabulary. If the project is flat and uses tonal layering instead, that's a valid answer; state it explicitly.
 - **Components**: For each common component (button, card, input, chip, list item, tooltip, nav), extract shape (radius), color assignment, hover/focus treatment, internal padding.
 - **Layout + spacing**: Extract grid, container, breakpoint, rhythm, and density behavior into Layout.

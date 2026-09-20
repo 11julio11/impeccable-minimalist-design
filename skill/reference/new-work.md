@@ -10,6 +10,7 @@ Read DESIGN.md, representative code, tokens, components, and assets.
 - **Established world:** inherit it. A missing DESIGN.md does not erase a coherent identity already present in code; document that identity instead of inventing a replacement.
 - **Incomplete brand:** preserve confirmed assets and recognizable traits, then help the user expand the system for this new surface.
 - **No visual authority:** create a new world with the user.
+- **Benchmark evidence:** when creating or redesigning complex flows, ground structural choices in real video walkthroughs and production examples (see [benchmark-research.md](benchmark-research.md)).
 
 A section, component, feature, or state inside an established surface inherits that surface. Do not turn a local addition into a new identity exercise.
 
