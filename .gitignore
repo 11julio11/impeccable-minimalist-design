@@ -116,6 +116,15 @@ talks/
 # The project-local hook manifest is the one tracked `.codex/` artifact.
 .codex/*
 !.codex/hooks.json
+
+# Local agent workspace customizations (ECC skills, rules, workflows, state)
+.agents/*
+!.agents/rules/
+.agents/rules/*
+!.agents/rules/protocolo-3-fases.md
+!.agents/skills/
+.agents/skills/*
+!.agents/skills/design-minimalist/
 .astro/
 
 # Local-only scratch for exploratory scripts, parked pages, and unused asset candidates.
