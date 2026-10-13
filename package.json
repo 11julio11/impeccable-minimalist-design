@@ -79,21 +79,21 @@
     "domutils": "^4.0.2",
     "fflate": "^0.8.3",
     "htmlparser2": "^12.0.0",
-    "marked": "^18.0.13"
+    "marked": "^18.1.0"
   },
   "optionalDependencies": {
-    "puppeteer": "^25.11.0"
+    "puppeteer": "^25.13.0"
   },
   "devDependencies": {
-    "@ai-sdk/anthropic": "^4.0.57",
-    "@ai-sdk/google": "^4.0.75",
-    "@ai-sdk/openai": "^4.0.70",
-    "@anthropic-ai/claude-agent-sdk": "^0.3.276",
-    "@anthropic-ai/sdk": "^0.126.0",
-    "@babel/parser": "^8.0.6",
-    "ai": "^7.0.106",
+    "@ai-sdk/anthropic": "^4.0.78",
+    "@ai-sdk/google": "^4.0.93",
+    "@ai-sdk/openai": "^4.0.91",
+    "@anthropic-ai/claude-agent-sdk": "^0.3.296",
+    "@anthropic-ai/sdk": "^0.133.0",
+    "@babel/parser": "^8.0.7",
+    "ai": "^7.0.137",
     "archiver": "^8.0.0",
-    "playwright": "^1.63.0",
+    "playwright": "^1.64.0",
     "svelte": "^5",
     "zod": "^4.6.5"
   }
